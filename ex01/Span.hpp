@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:59:59 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/08/19 20:32:47 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/08/20 20:24:08 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <map>
 # include <vector>
 # include <list>
-
 class Span {
 
 	private:
