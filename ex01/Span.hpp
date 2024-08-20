@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:59:59 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/08/06 21:07:15 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/08/19 20:32:47 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,33 @@
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <numeric>
+# include <iostream>
+# include <algorithm>
+# include <exception>
+# include <limits>
+# include <map>
+# include <vector>
+# include <list>
 
-class Span
-{
+class Span {
+
 	private:
-	
-		unsigned int		_N;
-		std::vector<int>	_nums;
+		unsigned int	_N;
+		std::vector<int> _numbers;
+
+		Span( void );
 
 	public:
-
 		Span( unsigned int N );
-		Span( Span const & src );
-		Span &operator=( Span const & src );
-		~Span( void );
+		Span( Span const &src );
+		Span &operator=( Span const &src );
+		~Span();
 
-		void			addNumber( int num );
-		unsigned int	shortestSpan( void );
-		unsigned int	longestSpan( void );
+		void addNumber( int num );
 		
+		unsigned int shortestSpan( void ) const;
+		unsigned int longestSpan( void ) const;
+
 };
 
-#endif // SPAN_HPP
+#endif

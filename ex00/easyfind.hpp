@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 19:04:11 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/08/06 18:40:26 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/08/19 18:46:00 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 #ifndef EASYFIND_HPP
 # define EASYFIND_HPP
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <list>
-#include <deque>
+# include <iostream>
+# include <exception>
+# include <algorithm>
+# include <vector>
+# include <list>
 
-template <typename T>
-typename T::iterator easyfind( T& container, int val ) {
+template<typename T> 
+typename T::iterator easyfind( T &container, int val ) {
 
-	typename T::iterator	it = std::find( container.begin(), \
-											container.end(), \
-											val );
+	typename T::iterator it = std::find( container.begin(), container.end(), val );
+
 	if ( it == container.end() ) {
 
-		throw std::runtime_error( "Value not found in container" );
+		throw std::exception();
 	}
 	return it;
 }
 
-#endif // EASYFIND_HPP
+#endif

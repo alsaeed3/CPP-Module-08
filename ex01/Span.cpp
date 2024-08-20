@@ -6,7 +6,95 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:59:56 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/08/06 18:59:57 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/08/20 16:51:19 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Span.hpp"
+
+Span::Span( unsigned int N ) {
+
+	this->_N = N;
+
+	return;
+}
+
+Span::Span( Span const &src ) {
+	
+	*this = src;
+
+	return;
+}
+
+Span &Span::operator=( Span const &src ) {
+	
+	this->_N = src._N;
+	this->_numbers = src._numbers;
+
+	return *this;
+}
+
+Span::~Span() {
+	
+	return;
+}
+
+
+void Span::addNumber( int num ) {
+	
+	if ( this->_numbers.size() >= this->_N ) {
+
+		throw std::runtime_error("Span is full");
+	}
+	_numbers.push_back( num );
+
+	return;
+}
+
+unsigned int Span::shortestSpan( void ) const {
+	
+	// try {
+
+		if ( _numbers.size() < 2 ) {
+
+			throw std::logic_error("Not sufficient numbers to find a span");
+		}
+	// } catch ( std::exception &e ) {
+		
+	// 	std::cerr << e.what() << std::endl;
+	// }
+
+	std::vector<int> sortedNumbers = this->_numbers;
+	std::sort(sortedNumbers.begin(), sortedNumbers.end());
+
+	unsigned int minSpan = std::numeric_limits<unsigned int>::max();
+	for ( std::size_t i = 1; i < sortedNumbers.size(); ++i ) {
+
+		unsigned int span = sortedNumbers[i] - sortedNumbers[i - 1];
+		if ( span < minSpan ) {
+			
+			minSpan = span;
+		}
+	}
+
+	return minSpan;
+}
+
+unsigned int Span::longestSpan( void ) const {
+	
+	// try {
+		
+		if ( _numbers.size() < 2 ) {
+
+			throw std::logic_error("Not sufficient numbers to find a span");
+		}
+	// } catch ( std::exception &e ) {
+		
+	// 	std::cerr << e.what() << std::endl;
+	// }
+	unsigned int minElement = *std::min_element(_numbers.begin(), _numbers.end());
+	unsigned int maxElement = *std::max_element(_numbers.begin(), _numbers.end());
+
+	return maxElement - minElement;	
+}
 
