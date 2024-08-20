@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:59:56 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/08/20 16:51:19 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/08/20 17:20:13 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,11 @@ void Span::addNumber( int num ) {
 }
 
 unsigned int Span::shortestSpan( void ) const {
-	
-	// try {
 
-		if ( _numbers.size() < 2 ) {
+	if ( _numbers.size() < 2 ) {
 
-			throw std::logic_error("Not sufficient numbers to find a span");
-		}
-	// } catch ( std::exception &e ) {
-		
-	// 	std::cerr << e.what() << std::endl;
-	// }
+		throw std::logic_error("Not sufficient numbers to find a span");
+	}
 
 	std::vector<int> sortedNumbers = this->_numbers;
 	std::sort(sortedNumbers.begin(), sortedNumbers.end());
@@ -82,16 +76,11 @@ unsigned int Span::shortestSpan( void ) const {
 
 unsigned int Span::longestSpan( void ) const {
 	
-	// try {
-		
-		if ( _numbers.size() < 2 ) {
+	if ( _numbers.size() < 2 ) {
 
-			throw std::logic_error("Not sufficient numbers to find a span");
-		}
-	// } catch ( std::exception &e ) {
-		
-	// 	std::cerr << e.what() << std::endl;
-	// }
+		throw std::logic_error("Not sufficient numbers to find a span");
+	}
+
 	unsigned int minElement = *std::min_element(_numbers.begin(), _numbers.end());
 	unsigned int maxElement = *std::max_element(_numbers.begin(), _numbers.end());
 
