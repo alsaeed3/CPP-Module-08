@@ -47,6 +47,8 @@
 		"numbers": "cpp",
 		"ostream": "cpp",
 		"streambuf": "cpp",
-		"typeinfo": "cpp"
+		"typeinfo": "cpp",
+		"span": "cpp",
+		"*.tpp": "c"
 	}
 }

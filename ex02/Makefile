@@ -6,7 +6,7 @@
 #    By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 18:02:37 by alsaeed           #+#    #+#              #
-#    Updated: 2024/08/05 18:19:09 by alsaeed          ###   ########.fr        #
+#    Updated: 2024/08/20 19:48:16 by alsaeed          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ BOLD_GREEN 	= \033[1;32m
 BOLD_RED 	= \033[1;31m
 RESET 		= \033[0m
 
-NAME = mutantstack
+NAME = MutantStack
 
 CXX = c++
 
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -ggdb3
 
 INCLUDES = -I./
 
@@ -28,17 +28,17 @@ all: $(NAME)
 
 $(NAME): main.cpp
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) main.cpp -o $@
-	@echo "mutantstack compiled: $(BOLD_GREEN)OK$(RESET)"
+	@echo "MutantStack compiled: $(BOLD_GREEN)OK$(RESET)"
 
 clean:
 	@if [ -e $(NAME) ]; then \
-		echo "mutantstack clean: $(BOLD_RED)OK$(RESET)"; \
+		echo "MutantStack clean: $(BOLD_RED)OK$(RESET)"; \
 	fi
 
 fclean: clean
 	@if [ -e $(NAME) ]; then \
 		rm -rf $(NAME); \
-		echo "mutantstack full-clean: $(BOLD_RED)OK$(RESET)"; \
+		echo "MutantStack full-clean: $(BOLD_RED)OK$(RESET)"; \
 	fi
 
 re: fclean all
