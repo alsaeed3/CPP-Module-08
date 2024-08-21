@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:59:56 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/08/20 17:20:13 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/08/21 19:03:11 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void Span::addNumber( int num ) {
 	
 	if ( this->_numbers.size() >= this->_N ) {
 
-		throw std::runtime_error("Span is full");
+		throw std::logic_error("Span is full");
 	}
 	_numbers.push_back( num );
 
@@ -66,7 +66,7 @@ unsigned int Span::shortestSpan( void ) const {
 
 		unsigned int span = sortedNumbers[i] - sortedNumbers[i - 1];
 		if ( span < minSpan ) {
-			
+
 			minSpan = span;
 		}
 	}
@@ -87,3 +87,20 @@ unsigned int Span::longestSpan( void ) const {
 	return maxElement - minElement;	
 }
 
+void	Span::generateNumbers( int min, int max ) {
+
+	std::srand(std::time(NULL));
+	for (unsigned int i = _numbers.size(); i < _N; i++)
+	{
+		_numbers.push_back(std::rand() % (max - min + 1) + min);
+	}
+}
+
+void	Span::printNumbers() const {
+
+	for (unsigned int i = 0; i < _numbers.size(); i++)
+	{
+		std::cout << _numbers[i] << " ";
+	}
+	std::cout << std::endl;
+}

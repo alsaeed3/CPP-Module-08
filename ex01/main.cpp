@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:59:53 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/08/20 16:58:50 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/08/21 19:30:46 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,29 @@
 
 int main( void ) {
 
-	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
+	Span sp1 = Span(5);
+	Span sp2 = Span(10);
 
 	try {
-	std::cout << sp.shortestSpan() << std::endl;
 
-	std::cout << sp.longestSpan() << std::endl;
+		sp1.addNumber(6);
+		sp1.addNumber(3);
+		sp1.addNumber(17);
+		sp1.addNumber(9);
+		sp1.addNumber(11);
+
+		std::cout << "shortest span sp1: " << sp1.shortestSpan() << std::endl;
+
+		std::cout << "longest span sp1: " << sp1.longestSpan() << std::endl;
+		
+		sp2.generateNumbers(-1000, 1000);
+		sp2.printNumbers();
+		
+		std::cout << "shortest span sp2: " << sp2.shortestSpan() << std::endl;
+
+		std::cout << "longest span sp2: " << sp2.longestSpan() << std::endl;
 	} catch (std::exception &e) {
+
 		std::cout << e.what() << std::endl;
 	}
 	return 0;

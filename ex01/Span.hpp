@@ -6,7 +6,7 @@
 /*   By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 18:59:59 by alsaeed           #+#    #+#             */
-/*   Updated: 2024/08/20 20:24:08 by alsaeed          ###   ########.fr       */
+/*   Updated: 2024/08/21 19:00:50 by alsaeed          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <map>
 # include <vector>
 # include <list>
+
 class Span {
 
 	private:
@@ -40,6 +41,9 @@ class Span {
 		unsigned int shortestSpan( void ) const;
 		unsigned int longestSpan( void ) const;
 
+		void	generateNumbers(int min, int max);
+
+		void	printNumbers() const;
 };
 
 #endif

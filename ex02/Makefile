@@ -6,7 +6,7 @@
 #    By: alsaeed <alsaeed@student.42abudhabi.ae>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/05 18:02:37 by alsaeed           #+#    #+#              #
-#    Updated: 2024/08/20 19:48:16 by alsaeed          ###   ########.fr        #
+#    Updated: 2024/08/21 19:32:13 by alsaeed          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,9 @@ clean:
 	fi
 
 fclean: clean
+	@if [ -e $(NAME).dSYM ]; then \
+		rm -rf $(NAME).dSYM; \
+	fi
 	@if [ -e $(NAME) ]; then \
 		rm -rf $(NAME); \
 		echo "MutantStack full-clean: $(BOLD_RED)OK$(RESET)"; \
