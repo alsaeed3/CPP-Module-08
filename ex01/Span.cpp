@@ -89,7 +89,7 @@ unsigned int Span::longestSpan( void ) const {
 
 void	Span::generateNumbers( int min, int max ) {
 
-	std::srand(std::time(NULL));
+	srand(time(NULL));
 	for (unsigned int i = _numbers.size(); i < _N; i++)
 	{
 		_numbers.push_back(std::rand() % (max - min + 1) + min);
